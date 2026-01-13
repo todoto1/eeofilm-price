@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웨딩 촬영 패키지 선택</title>
+</head>
+<body>
+    <div id="cover">
+        <!-- 왼쪽: 선택 영역 -->
+        <section id="selection-section" style="border-right: 1px solid #dedede; padding-right: 20px;">
+            <h2 class="xkdlxmf">촬영 패키지 선택</h2>
+
+            <!-- 1. 패키지 타입 선택 -->
+            <div class="xoqList">
+                <p class="subxkdlxmf">패키지 타입</p>
+                <div class="xoqinput">
+                    <div>
+                        <input type="radio" name="package-type" value="pre-wedding" id="package-pre" checked>
+                        <label for="package-pre">Pre-Wedding</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="package-type" value="wedding-day" id="package-wed">
+                        <label for="package-wed">Wedding Day</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pre-Wedding 설명 -->
+            <div class="package-info" id="pre-wedding-info">
+                <h3 style="font-size: 15px; margin-bottom: 8px; color: #555;">[eeo_P] Pre-Wedding : The First Scene</h3>
+                <p style="font-size: 13px; line-height: 1.6; color: #777; margin-bottom: 8px;">
+                    스튜디오/야외 스냅 촬영 동행<br>
+                    사진 촬영에 중점을 맞추하지 않는 신여자,<br>
+                    그녀의 자연도운 모든 시간이 캘린더되기를 바랍니다.
+                </p>
+                <span style="display: inline-block; background: #3498db; color: white; padding: 4px 10px; border-radius: 8px; font-size: 11px;">✓ VAT포함 금액입니다</span>
+            </div>
+
+            <!-- Wedding Day 설명 -->
+            <div class="package-info" id="wedding-day-info" style="display: none;">
+                <h3 style="font-size: 15px; margin-bottom: 8px; color: #555;">[eeo_W] Wedding Day : The Eternal Scene</h3>
+                <p style="font-size: 13px; line-height: 1.6; color: #777; margin-bottom: 8px;">
+                    본식 서브 캘린더 영상 기록<br>
+                    매일 DVD 영상보다는 또 다른 시선으로,<br>
+                    예식의 소중한 순간들을 빈티지 캘린더되기를 바랍니다.
+                </p>
+                <span style="display: inline-block; background: #3498db; color: white; padding: 4px 10px; border-radius: 8px; font-size: 11px;">✓ VAT포함 금액입니다</span>
+            </div>
+
+            <!-- 2. Pre-Wedding 플랜 선택 -->
+            <div class="xoqList" id="pre-wedding-plans">
+                <p class="subxkdlxmf">플랜 선택</p>
+                <div class="xoqinput">
+                    <div>
+                        <input type="radio" name="pre-plan" value="lite" id="pre-lite" 
+                               data-original="400000" data-discounted="350000" data-earlybird="250000" checked>
+                        <label for="pre-lite">#1. Lite</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="pre-plan" value="deep" id="pre-deep"
+                               data-original="550000" data-discounted="450000" data-earlybird="350000">
+                        <label for="pre-deep">#2. Deep</label>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;" id="pre-plan-details">
+                    <div id="pre-lite-details">
+                        <p style="font-size: 13px; color: #777; line-height: 1.6;">
+                            • 4시간 촬영 · 영상 편집은 3곳 내외<br>
+                            • 빈티지 캘린더 스냅 사진 서비스<br>
+                            • 오픈독가 신청 시 '세로형 하이라이트 영상' 무료 제공
+                        </p>
+                    </div>
+                    <div id="pre-deep-details" style="display: none;">
+                        <p style="font-size: 13px; color: #777; line-height: 1.6;">
+                            • 4시간 촬영 · 영상 편집은 3곳 내외<br>
+                            • 빈티지 캘린더 스냅 사진 서비스<br>
+                            • 오픈독가 신청 시 '세로형 하이라이트 영상' 무료 제공
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Wedding Day 플랜 선택 -->
+            <div class="xoqList" id="wedding-day-plans" style="display: none;">
+                <p class="subxkdlxmf">플랜 선택</p>
+                <div class="xoqinput Grid3f">
+                    <div>
+                        <input type="radio" name="wed-plan" value="lite" id="wed-lite"
+                               data-original="450000" data-discounted="300000" data-earlybird="250000">
+                        <label for="wed-lite">#1. Lite</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="wed-plan" value="more" id="wed-more"
+                               data-original="500000" data-discounted="350000" data-earlybird="300000">
+                        <label for="wed-more">#2. More</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="wed-plan" value="deep" id="wed-deep"
+                               data-original="550000" data-discounted="400000" data-earlybird="350000">
+                        <label for="wed-deep">#3. Deep</label>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;" id="wed-plan-details">
+                    <div id="wed-lite-details" style="display: none;">
+                        <p style="font-size: 13px; color: #777; line-height: 1.6;">
+                            • 입장부터 대잔치까지, 두 분의 동 전체를 검증한 기록<br>
+                            • 본식 전중 기록 신랑·신부 Only<br>
+                            • 영상 편집본 1본 내외<br>
+                            • 빈티지 캘린더 스냅 사진 서비스<br>
+                            • 오픈독가 신청 시 '세로형 하이라이트 영상' 무료 제공
+                        </p>
+                    </div>
+                    <div id="wed-more-details" style="display: none;">
+                        <p style="font-size: 13px; color: #777; line-height: 1.6;">
+                            • 소중한 이들의 따뜻한 시선까지 함께 남는 기록<br>
+                            • 본식-드레시 자리 신랑·신부 + 가족<br>
+                            • 영상 편집본 2본 내외<br>
+                            • 빈티지 캘린더 스냅 사진 서비스<br>
+                            • 오픈독가 신청 시 '세로형 하이라이트 영상' 무료 제공
+                        </p>
+                    </div>
+                    <div id="wed-deep-details" style="display: none;">
+                        <p style="font-size: 13px; color: #777; line-height: 1.6;">
+                            • 예식의 시작부터 마무리까지 선명 & 움동을 감이 있게 기록<br>
+                            • 대기실-입장 촬영 신랑·신부 + 가족·하객<br>
+                            • 영상 편집본 3본 내외<br>
+                            • 빈티지 캘린더 스냅 사진 서비스<br>
+                            • 오픈독가 신청 시 '세로형 하이라이트 영상' 무료 제공
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 오른쪽: 가격 영역 -->
+        <section id="price-section">
+            <h2 style="font-size: 20px;">가격</h2>
+
+            <div class="xoqemf">
+                <p class="subxkdlxmf">패키지</p>
+                <div><input type="text" value="Pre-Wedding" id="package-name" readonly></div>
+            </div>
+
+            <div class="xoqemf">
+                <p class="subxkdlxmf">플랜</p>
+                <div><input type="text" value="#1. Lite" id="plan-name" readonly></div>
+            </div>
+
+            <div class="xoqemf">
+                <p class="subxkdlxmf">정가</p>
+                <div><input type="text" value="400,000" id="original-price" readonly>원</div>
+            </div>
+
+            <div class="xoqemf">
+                <p class="subxkdlxmf">오픈특가 할인</p>
+                <div>
+                    <span>-</span>
+                    <input type="text" value="150,000" id="discount-amount" style="width: 80px;" readonly>원
+                </div>
+            </div>
+
+            <div class="xoqemf" style="background-color: #dedede;">
+                <p class="subxkdlxmf" style="font-weight: bold;">최종 금액</p>
+                <div><input type="text" value="250,000" id="final-price" readonly>원</div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                <p style="font-size: 14px; color: #777; margin-bottom: 10px;">🎬 오픈특가</p>
+                <p style="font-size: 32px; font-weight: bold; color: #333; margin-bottom: 10px;">
+                    <span id="total-display">250,000</span>원
+                </p>
+                <p style="font-size: 13px; color: #e74c3c;">
+                    정가 대비 <strong id="savings-percent">37.5%</strong> 할인
+                </p>
+            </div>
+
+            <button style="width: 100%; padding: 15px; background: #3498db; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px;">
+                예약 문의하기
+            </button>
+        </section>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        #cover {
+            width: 70%;
+            min-height: 650px;
+            background: #f5f5f5;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 20px;
+            gap: 20px;
+            color: black;
+        }
+        #cover .xkdlxmf {
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        #cover .subxkdlxmf {
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #cover .xoqList {
+            margin-bottom: 20px;
+        }
+        #cover .xoqinput {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #cover .xoqinput>div>label {
+            width: 100%;
+            display: block;
+            height: 40px;
+            border: 1px solid #a9a9a9;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #a9a9a9;
+            font-size: 14px;
+        }
+        #cover .xoqinput>div:nth-child(1)>label {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        #cover .xoqinput>div:last-child>label {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        #cover input[type="radio"] {
+            display: none;
+        }
+        #cover input[type="radio"]:checked + label {
+            color: blue;
+            border-color: blue;
+        }
+        #cover .Grid3f {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        #cover .Grid3f>div:nth-child(1)>label {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-radius: 10px 0 0 10px;
+        }
+        #cover .Grid3f>div:nth-child(2)>label {
+            border-radius: 0;
+        }
+        #cover .Grid3f>div:nth-child(3)>label {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-radius: 0 10px 10px 0;
+        }
+        #cover .xoqemf {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+        #cover input[type="text"] {
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            border: none;
+            background: none;
+            outline: none;
+            color: black;
+        }
+        .package-info {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            #cover {
+                width: 95%;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            #selection-section {
+                border-right: none !important;
+                border-bottom: 1px solid #dedede;
+                padding-right: 0 !important;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // 숫자 포맷팅 함수
+        function parseNumberFromString(str) {
+            return parseFloat(str.replace(/,/g, ''));
+        }
+
+        function formatNumberWithCommas(num) {
+            return num.toLocaleString();
+        }
+
+        // 현재 선택 상태
+        let currentPackage = 'pre-wedding';
+        let currentPlan = null;
+
+        // 초기화
+        window.onload = function() {
+            currentPlan = document.querySelector('input[name="pre-plan"]:checked');
+            updatePrice();
+        }
+
+        // 패키지 타입 변경
+        document.querySelectorAll('input[name="package-type"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                currentPackage = this.value;
+
+                // 패키지 정보 표시 전환
+                document.getElementById('pre-wedding-info').style.display = 
+                    currentPackage === 'pre-wedding' ? 'block' : 'none';
+                document.getElementById('wedding-day-info').style.display = 
+                    currentPackage === 'wedding-day' ? 'block' : 'none';
+
+                // 플랜 선택 영역 전환
+                document.getElementById('pre-wedding-plans').style.display = 
+                    currentPackage === 'pre-wedding' ? 'block' : 'none';
+                document.getElementById('wedding-day-plans').style.display = 
+                    currentPackage === 'wedding-day' ? 'block' : 'none';
+
+                // Wedding Day로 전환 시 첫 번째 플랜 선택
+                if (currentPackage === 'wedding-day') {
+                    document.getElementById('wed-lite').checked = true;
+                    currentPlan = document.getElementById('wed-lite');
+                    showPlanDetails('wed-lite-details');
+                } else {
+                    document.getElementById('pre-lite').checked = true;
+                    currentPlan = document.getElementById('pre-lite');
+                    showPlanDetails('pre-lite-details');
+                }
+
+                // 패키지 이름 업데이트
+                document.getElementById('package-name').value = 
+                    currentPackage === 'pre-wedding' ? 'Pre-Wedding' : 'Wedding Day';
+
+                updatePrice();
+            });
+        });
+
+        // Pre-Wedding 플랜 변경
+        document.querySelectorAll('input[name="pre-plan"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                currentPlan = this;
+                showPlanDetails(this.id + '-details');
+                updatePrice();
+            });
+        });
+
+        // Wedding Day 플랜 변경
+        document.querySelectorAll('input[name="wed-plan"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                currentPlan = this;
+                showPlanDetails(this.id + '-details');
+                updatePrice();
+            });
+        });
+
+        // 플랜 상세 정보 표시
+        function showPlanDetails(detailsId) {
+            // 모든 상세 정보 숨기기
+            document.querySelectorAll('[id$="-details"]').forEach(function(detail) {
+                detail.style.display = 'none';
+            });
+            
+            // 선택된 플랜의 상세 정보만 표시
+            var detailElement = document.getElementById(detailsId);
+            if (detailElement) {
+                detailElement.style.display = 'block';
+            }
+        }
+
+        // 가격 업데이트
+        function updatePrice() {
+            if (!currentPlan) return;
+
+            var original = parseInt(currentPlan.dataset.original);
+            var earlybird = parseInt(currentPlan.dataset.earlybird);
+            var discount = original - earlybird;
+            var discountPercent = Math.round((discount / original) * 100 * 10) / 10;
+
+            // 플랜 이름 업데이트
+            var planValue = currentPlan.value;
+            var planNumber = '';
+            if (planValue === 'lite') planNumber = '#1. Lite';
+            else if (planValue === 'more') planNumber = '#2. More';
+            else if (planValue === 'deep') planNumber = currentPackage === 'pre-wedding' ? '#2. Deep' : '#3. Deep';
+            
+            document.getElementById('plan-name').value = planNumber;
+
+            // 가격 정보 업데이트
+            document.getElementById('original-price').value = formatNumberWithCommas(original);
+            document.getElementById('discount-amount').value = formatNumberWithCommas(discount);
+            document.getElementById('final-price').value = formatNumberWithCommas(earlybird);
+            
+            // 총액 표시 업데이트
+            document.getElementById('total-display').textContent = formatNumberWithCommas(earlybird);
+            document.getElementById('savings-percent').textContent = discountPercent + '%';
+        }
+    </script>
+</body>
+</html>
