@@ -63,8 +63,8 @@
                         <label for="pre-deep">#2. Deep</label>
                     </div>
                 </div>
-                <div style="margin-top: 8px;" id="pre-plan-details">
-                    <div id="pre-lite-details">
+                <div style="margin-top: 8px; display: block;" id="pre-plan-details">
+                    <div id="pre-lite-details" style="display: block;">
                         <p style="font-size: 12px; color: #777; line-height: 1.5;">
                             • 4시간 촬영 · 영상 편집은 3곳 내외<br>
                             • 빈티지 캘린더 스냅 사진 서비스<br>
@@ -101,8 +101,8 @@
                         <label for="wed-deep">#3. Deep</label>
                     </div>
                 </div>
-                <div style="margin-top: 8px;" id="wed-plan-details">
-                    <div id="wed-lite-details">
+                <div style="margin-top: 8px; display: block;" id="wed-plan-details">
+                    <div id="wed-lite-details" style="display: block;">
                         <p style="font-size: 12px; color: #777; line-height: 1.5;">
                             • 입장부터 대잔치까지, 두 분의 동 전체를 검증한 기록<br>
                             • 본식 전중 기록 신랑·신부 Only<br>
@@ -279,6 +279,11 @@
             border-radius: 8px;
             margin: 12px 0;
             border: 1px solid #e0e0e0;
+        }
+
+        #pre-plan-details,
+        #wed-plan-details {
+            display: block !important;
         }
 
         @media (max-width: 768px) {
