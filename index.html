@@ -337,12 +337,19 @@
                 if (currentPackage === 'wedding-day') {
                     document.getElementById('wed-lite').checked = true;
                     currentPlan = document.getElementById('wed-lite');
-                    showPlanDetails('wed-lite-details');
+                    
+                    // Wedding Day 상세 정보 표시
+                    document.getElementById('wed-lite-details').style.display = 'block';
+                    document.getElementById('wed-more-details').style.display = 'none';
+                    document.getElementById('wed-deep-details').style.display = 'none';
                 } else {
                     // Pre-Wedding으로 전환 시 첫 번째 플랜 선택
                     document.getElementById('pre-lite').checked = true;
                     currentPlan = document.getElementById('pre-lite');
-                    showPlanDetails('pre-lite-details');
+                    
+                    // Pre-Wedding 상세 정보 표시
+                    document.getElementById('pre-lite-details').style.display = 'block';
+                    document.getElementById('pre-deep-details').style.display = 'none';
                 }
 
                 // 패키지 이름 업데이트
@@ -357,7 +364,12 @@
         document.querySelectorAll('input[name="pre-plan"]').forEach(function(radio) {
             radio.addEventListener('change', function() {
                 currentPlan = this;
-                showPlanDetails(this.id + '-details');
+                
+                // Pre-Wedding 상세 정보 전환
+                document.getElementById('pre-lite-details').style.display = 'none';
+                document.getElementById('pre-deep-details').style.display = 'none';
+                document.getElementById(this.id + '-details').style.display = 'block';
+                
                 updatePrice();
             });
         });
@@ -366,29 +378,16 @@
         document.querySelectorAll('input[name="wed-plan"]').forEach(function(radio) {
             radio.addEventListener('change', function() {
                 currentPlan = this;
-                showPlanDetails(this.id + '-details');
-                updatePrice();
-            });
-        });
-
-        // 플랜 상세 정보 표시
-        function showPlanDetails(detailsId) {
-            // 현재 패키지에 해당하는 상세 정보만 숨기기
-            if (currentPackage === 'pre-wedding') {
-                document.getElementById('pre-lite-details').style.display = 'none';
-                document.getElementById('pre-deep-details').style.display = 'none';
-            } else {
+                
+                // Wedding Day 상세 정보 전환
                 document.getElementById('wed-lite-details').style.display = 'none';
                 document.getElementById('wed-more-details').style.display = 'none';
                 document.getElementById('wed-deep-details').style.display = 'none';
-            }
-            
-            // 선택된 플랜의 상세 정보만 표시
-            var detailElement = document.getElementById(detailsId);
-            if (detailElement) {
-                detailElement.style.display = 'block';
-            }
-        }
+                document.getElementById(this.id + '-details').style.display = 'block';
+                
+                updatePrice();
+            });
+        });
 
         // 가격 업데이트
         function updatePrice() {
