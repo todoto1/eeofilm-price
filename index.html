@@ -339,6 +339,7 @@
                     currentPlan = document.getElementById('wed-lite');
                     showPlanDetails('wed-lite-details');
                 } else {
+                    // Pre-Wedding으로 전환 시 첫 번째 플랜 선택
                     document.getElementById('pre-lite').checked = true;
                     currentPlan = document.getElementById('pre-lite');
                     showPlanDetails('pre-lite-details');
@@ -372,10 +373,15 @@
 
         // 플랜 상세 정보 표시
         function showPlanDetails(detailsId) {
-            // 모든 상세 정보 숨기기
-            document.querySelectorAll('[id$="-details"]').forEach(function(detail) {
-                detail.style.display = 'none';
-            });
+            // 현재 패키지에 해당하는 상세 정보만 숨기기
+            if (currentPackage === 'pre-wedding') {
+                document.getElementById('pre-lite-details').style.display = 'none';
+                document.getElementById('pre-deep-details').style.display = 'none';
+            } else {
+                document.getElementById('wed-lite-details').style.display = 'none';
+                document.getElementById('wed-more-details').style.display = 'none';
+                document.getElementById('wed-deep-details').style.display = 'none';
+            }
             
             // 선택된 플랜의 상세 정보만 표시
             var detailElement = document.getElementById(detailsId);
